@@ -1,2 +1,6 @@
 # CIRNO
-Convolutional neural network based Intelligence for Recognizing game status to Navigate and Operate the player
+**C**onvolutional neural network based  
+**I**ntelligence for  
+**R**ecognizing game status to  
+**N**avigate and  
+**O**perate the player

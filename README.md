@@ -1,6 +1,9 @@
 # CIRNO
 **C**onvolutional neural network based  
-**I**mage  
-**R**ecognition Engine for      
-**N**umerous classification of   
-**O**bjects and characters in touhou project
+**I**ntelligence for  
+**R**ecognizing game status to  
+**N**avigate and  
+**O**perate the player  
+
+Yes, You heard it right, Let's make Cirno be a intellectual being!  
+

@@ -19,3 +19,5 @@ we are going to use ConvNet with reLU (if possible, leaky reLU) and will use sof
 
 The goal:  
 Creating General Artifical Neural Network for solving all Touhou Project games (which seems impossible for me, but let me try)  
+## Update
+This project is now part of Pattern Recognition and Machine Learning Laboratory Sub-Project.

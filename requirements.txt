@@ -1,0 +1,10 @@
+# Project C.I.R.N.O. 
+# requirements.txt
+
+## Basic Requirements
+
+opencv-python
+pillow
+pyscreenshot
+pywin32
+matplotlib

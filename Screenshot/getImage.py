@@ -5,26 +5,23 @@ from PIL import ImageGrab
 
 window = None
 img = None
-
-def getImage(refx,refy,xsize,ysize):
-    img = ImageGrab.grab(bbox=(refx,refy,(refx+(xsize)),(refy+(ysize))))
-    
-    plt.imshow(img)
-    plt.show()
-
+scale = 1
 
 def getImageZone():
     print("start get image zone")
     global window
     global img
+    global scale
     if platform.system() == "Windows":
         print("platform checked, its windows")
         import win32gui
         rect = win32gui.GetWindowRect(window)
         print("rectangle checked")
         print(rect)
+        print("Patching with scale")
+        print((rect[0]*scale, rect[1]*scale, rect[2]*scale, rect[3]*scale))
         print("ImageGrab call")
-        img = ImageGrab.grab(bbox=rect)
+        img = ImageGrab.grab(bbox=(rect[0]*scale, rect[1]*scale, rect[2]*scale, rect[3]*scale))
         print("finished get image zone")
         return
     else:
@@ -53,8 +50,10 @@ def getWindowHandle():
         return
 
 
+print("Please Enter your GUI Scale")
+scale = float(input("Scale: "))
 print("Please Launch Desired touhou project version")
-input("Press Enter, then it will capture the Active Window Automatically after 5 seconds")
+input("Press Enter, then it will capture the Active Window Automatically after 5 seconds ")
 time.sleep(5)
 getWindowHandle()
 print("Got: Window Handle")

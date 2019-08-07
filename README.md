@@ -31,3 +31,7 @@ Creating General Artifical Neural Network for solving all Touhou Project games (
 
 ## Update
 This project is now part of Pattern Recognition and Machine Learning Laboratory Sub-Project.
+
+### 2019-08-08
+![image](https://user-images.githubusercontent.com/27724108/62657673-facb2000-b9a1-11e9-997f-3e7d80e4d5f4.png)  
+Saved screenshot. Finally.  

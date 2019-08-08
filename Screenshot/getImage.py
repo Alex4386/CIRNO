@@ -73,41 +73,51 @@ print("Test Complete")
 
 ## Image Process for ROI
 def getPOI(img):
+    # TH12
     poi_game = np.float32(img)[int(37 * scale):int(477 * scale), int(40 * scale):int((418 * scale))]
+
+    # TH17
+    #poi_game = np.float32(img)[int(40 * scale):int(500 * scale), int(40 * scale):int((425 * scale))]
+
     return poi_game
 
 def processResize(img, x, y):
-    resize = cv2.resize(np.float32(img), dsize=(x,y), interpolation=cv2.INTER_AREA)
-    return resize
+    #resize = cv2.resize(np.float32(img), dsize=(x,y), interpolation=cv2.INTER_AREA)
+    return img
 
 
 plt.ion()
 
 while True:
     start_time = time.time()
-    train = processResize(getPOI(getImageZone()), 189, 205)
+    train = processResize(getPOI(getImageZone()), 200, 200)
+    
+    ## Test Zone
+    #plt.imshow(train / 255)
+    #plt.show()
+    #plt.pause(0.01)
     print("Update: ",1.0 / (time.time() - start_time),"fps")
-    plt.imshow(train / 255)
-    plt.show()
-    plt.pause(0.0001)
+
+
 ## Lets do some Deep Learning Stuff
-#import tensorflow as tf
-#
-#keras = tf.keras
-#raw_game = cv2.resize(np.float32(poi_game), dsize=(256,189), interpolation=cv2.INTER_AREA)
-#train_game = np.array(raw_game)
-#print(train_game.shape)
+import tensorflow as tf
 
-## Crunching down to 256x256
-#plt.imshow(train_game/255)
-#plt.show()
+keras = tf.keras
 
+model = keras.Sequential()
+model.add(keras.layers.Conv2D(200,5,5,input_shape=(200,200,3),activation='relu'))
+model.add(keras.layers.MaxPooling2D(pool_size=(4,4), strudes=None, padding='valid', data_format=None))
 
+model.add(keras.layers.Conv2D(150,5,5,input_shape=(200,200,3),activation='relu'))
+model.add(keras.layers.MaxPooling2D(pool_size=(4,4), strudes=None, padding='valid', data_format=None))
 
+model.add(keras.layers.Conv2D(100,5,5,input_shape=(200,200,3),activation='relu'))
+model.add(keras.layers.MaxPooling2D(pool_size=(4,4), strudes=None, padding='valid', data_format=None))
 
+model.add(keras.layers.Dense(9))
 
-# Point Of Interest
-#model = keras.Sequential()
-#model.add(keras.layers.Conv2D(4, ))
-
+model.compile(sgd(lr=.01), "mse")
+# Input
+# left, right, up, down, Shift+left, Shift+right, Shift+up, Shift+down, X
+# Z is constantly pressed.
 

@@ -2,8 +2,51 @@
 import matplotlib.pyplot as plt
 import platform
 import time
-from PIL import ImageGrab
 import numpy as np
+
+if platform.system() == "windows" or platform.system() == "Darwin":
+    from PIL import ImageGrab
+elif platform.system() == "Linux":
+    import gi
+    from gi.repository import Gdk
+    from gi.repository import GdkPixbuf
+    gi.require_version('Gtk','3.0')
+
+    ## STACK OVERFLOW CODE
+
+    def array_from_pixbuf(p):
+        " convert from GdkPixbuf to numpy array"
+        w,h,c,r=(p.get_width(), p.get_height(), p.get_n_channels(), p.get_rowstride())
+        assert p.get_colorspace() == GdkPixbuf.Colorspace.RGB
+        assert p.get_bits_per_sample() == 8
+        if  p.get_has_alpha():
+            assert c == 4
+        else:
+            assert c == 3
+        assert r >= w * c
+        a=np.frombuffer(p.get_pixels(),dtype=np.uint8)
+        if a.shape[0] == w*c*h:
+            return a.reshape( (h, w, c) )
+        else:
+            b=np.zeros((h,w*c),'uint8')
+            for j in range(h):
+                b[j,:]=a[r*j:r*j+w*c]
+            return b.reshape( (h, w, c) )
+
+    def pixbuf_from_array(z):
+        " convert from np array to GdkPixbuf "
+        z=z.astype('uint8')
+        h,w,c=z.shape
+        assert c == 3 or c == 4
+        return GdkPixbuf.Pixbuf.new_from_data(z.tobytes(),  GdkPixbuf.Colorspace.RGB, c==4, 8, w, h, w*c, None, None)
+
+
+    ## STACK OVERFLOW CODE
+
+
+else:
+    print("Undefined System")
+
 
 ## Image Processing Stuff
 import cv2
@@ -31,6 +74,10 @@ def getImageZone():
         img = ImageGrab.grab(bbox=(rect[0]*scale, rect[1]*scale, rect[2]*scale, rect[3]*scale))
         #print("finished get image zone")
         return img
+    elif platform.system() == "Linux":
+        pb = Gdk.pixbuf_get_from_window(window, *window.get_geometry())
+        img = array_from_pixbuf(pb)
+        return img
     else:
         print("So, You are not running on Windows, Too bad. Manually write getImage")
         print("If you can get coordinates in macOS and Linux, Please feel free to PR.")
@@ -50,9 +97,14 @@ def getWindowHandle():
         window = windowHandle
         print("finished window handle")
         return
+    elif platform.system() == "Linux":
+        print("Fallback to GDK Method")
+
+        window = Gdk.get_default_root_window().get_screen().get_active_window()
+
     else:
         print("So, You are not running on Windows, Too bad. Manually write getImage")
-        print("If you can get coordinates in macOS and Linux, Please feel free to PR.")
+        print("If you can get coordinates in macOS, Please feel free to PR.")
         print("Because I have no idea to fix this. and I am also the Macbook user.")
         return
 
@@ -67,8 +119,8 @@ print("Got: Window Handle")
 print(window)
 getImageZone()
 print("Matplotlib export trial:")
-#plt.imshow(img)
-#plt.show()
+plt.imshow(img)
+plt.show()
 print("Test Complete")
 
 ## Image Process for ROI

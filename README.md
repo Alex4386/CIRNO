@@ -11,8 +11,7 @@ Yes, You heard it right, Let's make Cirno be a intellectual being!
 Since Touhou Project is expected to run on Microsoft Windows System only.  
 Not on Linux or macOS systems.  
   
-But if you still want to use it on macOS or Linux system, then remove `win32gui` from requirements.txt  
-and manually set coordinates of touhou project by editing getImage.py  
+But if you still want to use it on macOS ~~or Linux system~~ (Works on Linux at latest), then manually set coordinates of touhou project by editing getImage.py  
 
 ## Thesis
 Brief idea:  
@@ -35,3 +34,6 @@ This project is now part of Pattern Recognition and Machine Learning Laboratory 
 ### 2019-08-08
 ![image](https://user-images.githubusercontent.com/27724108/62657673-facb2000-b9a1-11e9-997f-3e7d80e4d5f4.png)  
 Saved screenshot. Finally.  
+
+### 2019-09-09
+Yes, I didn't give up the Linux Systems.

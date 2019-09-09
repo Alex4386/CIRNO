@@ -17,7 +17,7 @@ Yes, You heard it right, Let's make Cirno be a intellectual being!
 Brief idea:  
 Process the Image:  
 Raw Pixel Data as matrices:  
-implement reinforcement learning idea from [Google I/O 2018: Reinforcement Learning without a PhD.](https://www.youtube.com/watch?v=t1A3NTttvBA) ~~(well i can ask my professor, but this project is somehow embarrassing to show him)~~  
+implement reinforcement learning idea from [Google I/O 2018: Reinforcement Learning without a PhD.](https://www.youtube.com/watch?v=t1A3NTttvBA) ~~(well i can ask my professor, but this project is somehow embarrassing to show him)~~ (No, I can just ask Chris about it LOLOLOLOLOL)  
 
 Using Reinforcement Learning in FIFA 18 to perfect the art of free-kicks:
 [Youtube](https://www.youtube.com/watch?time_continue=1&v=MasxAN-xZIU)

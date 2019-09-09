@@ -80,7 +80,7 @@ def getImageZone():
         return img
     else:
         print("So, You are not running on Windows, Too bad. Manually write getImage")
-        print("If you can get coordinates in macOS and Linux, Please feel free to PR.")
+        print("If you can get coordinates in macOS, Please feel free to PR.")
         print("Because I have no idea to fix this. and I am also the Macbook user.")
         return
 

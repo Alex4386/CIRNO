@@ -56,6 +56,9 @@ window = None
 img = None
 scale = 1
 
+## Frame Count
+currentFrame = 0
+
 # Basically gets Window Handle and save at img
 def getImageZone():
     #print("start get image zone")
@@ -75,7 +78,7 @@ def getImageZone():
         #print("finished get image zone")
         return img
     elif platform.system() == "Linux":
-        pb = Gdk.pixbuf_get_from_window(window, *window.get_geometry())
+        pb = Gdk.pixbuf_get_from_window(window, window.get_position().x, window.get_position().y-40, window.get_width(), window.get_height());
         img = array_from_pixbuf(pb)
         return img
     else:
@@ -149,6 +152,8 @@ while True:
     #plt.show()
     #plt.pause(0.01)
     print("Update: ",1.0 / (time.time() - start_time),"fps")
+    currentFrame += 1
+
 
 
 ## Lets do some Deep Learning Stuff

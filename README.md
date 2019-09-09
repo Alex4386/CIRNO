@@ -7,11 +7,11 @@
 
 Yes, You heard it right, Let's make Cirno be a intellectual being!  
 
-## The Code is For Micro$oft Windows(tm) Systems Only.
-Since Touhou Project is expected to run on Microsoft Windows System only.  
-Not on Linux or macOS systems.  
-  
-But if you still want to use it on macOS ~~or Linux system~~ (Works on Linux at latest), then manually set coordinates of touhou project by editing getImage.py  
+## Supported Platforms
+ * Micro$oft Window$ Platforms
+ * Linux Systems whose Desktop Manager has GTK3 Support
+
+ Yes, bad news here. macOS didn't make it. But Tim Cook is deprecating x86 support so whatever! TH17 was also distributed in x86 binary. not x86_64.
 
 ## Thesis
 Brief idea:  

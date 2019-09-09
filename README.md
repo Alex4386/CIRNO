@@ -36,4 +36,5 @@ This project is now part of Pattern Recognition and Machine Learning Laboratory 
 Saved screenshot. Finally.  
 
 ### 2019-09-09
-Yes, I didn't give up the Linux Systems.
+Yes, I didn't give up the Linux Systems.  
+You know, Computers at Lab has Ubuntu installed, Not Windows!  

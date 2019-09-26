@@ -9,7 +9,7 @@ Yes, You heard it right, Let's make Cirno be a intellectual being!
 
 ## Supported Platforms
  * Micro$oft Window$ Platforms
- * Linux Systems whose Desktop Manager has GTK3 Support
+ * Linux Systems whose Desktop Manager has GTK3 Support ~~(= TmaxOS BAN)~~
 
  Yes, bad news here. macOS didn't make it. But Tim Cook is deprecating x86 support so whatever! TH17 was also distributed in x86 binary. not x86_64.
 

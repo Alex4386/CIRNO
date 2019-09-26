@@ -1,9 +1,9 @@
 # CIRNO
-**C**onvolutional neural network based  
+**C**IRNO:  
 **I**ntelligence for  
-**R**ecognizing game status to  
-**N**avigate and  
-**O**perate the player  
+**R**ecognizing, 
+**N**avigating and  
+**O**perating ingame.   
 
 Yes, You heard it right, Let's make Cirno be a intellectual being!  
 
@@ -38,3 +38,10 @@ Saved screenshot. Finally.
 ### 2019-09-09
 Yes, I didn't give up the Linux Systems.  
 You know, Computers at Lab has Ubuntu installed, Not Windows!  
+
+### 2019-09-27
+Changing Framework into pyTorch!  
+Neural network design revised! I am gonna use DQN (Deep Q Network)  
+  
+I wonder how can i send info of game lively into framework running on  
+Linux and Touhou project running in WineHQ Container 🤔  

@@ -1,7 +1,7 @@
 # CIRNO
 **C**IRNO:  
 **I**ntelligence for  
-**R**ecognizing, 
+**R**ecognizing,  
 **N**avigating and  
 **O**perating ingame.   
 

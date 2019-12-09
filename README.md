@@ -12,7 +12,8 @@ Yes, You heard it right, Let's make Cirno be a intellectual being!
  * Linux Systems whose Desktop Manager has GTK3 Support  
  ~~(Yes, Indeed TmaxOS is not compatible because of the Garbage Desktop Manager that doesn't know what is "STANDARD" API. and I don't want to support it. because it is pain in the ass)~~
 
- Yes, bad news here. macOS didn't make it. But Tim Cook is deprecating x86 support so whatever! TH17 was also distributed in x86 binary. not x86_64.
+ Yes, bad news here. macOS didn't make it. But Tim Cook is deprecating x86 support so whatever! TH17 was also distributed in x86 binary. not x86_64.  
+ **UPDATE: I updated my Macbook Pro to macOS Catalina, So I WON'T do any support stuff for macOS ever.** . 
 
 ## Thesis
 Brief idea:  

@@ -9,7 +9,8 @@ Yes, You heard it right, Let's make Cirno be a intellectual being!
 
 ## Supported Platforms
  * Micro$oft Window$ Platforms
- * Linux Systems whose Desktop Manager has GTK3 Support ~~(= TmaxOS BAN)~~
+ * Linux Systems whose Desktop Manager has GTK3 Support  
+ ~~(Yes, Indeed TmaxOS is not compatible because of the Garbage Desktop Manager that doesn't know what is "STANDARD" API. and I don't want to support it. because it is pain in the ass)~~
 
  Yes, bad news here. macOS didn't make it. But Tim Cook is deprecating x86 support so whatever! TH17 was also distributed in x86 binary. not x86_64.
 
@@ -45,3 +46,7 @@ Neural network design revised! I am gonna use DQN (Deep Q Network)
   
 I wonder how can i send info of game lively into framework running on  
 Linux and Touhou project running in WineHQ Container 🤔  
+
+### 2019-12-09
+Came up with an idea. Use websocket!  
+

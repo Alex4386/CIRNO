@@ -27,6 +27,10 @@ Yes, You heard it right, Let's make Cirno be a intellectual being!
 Yes, bad news here. macOS didn't make it. But Tim Cook is deprecating x86 support so, Initial reason of continuing this project is this  
 **UPDATE: I updated my Macbook Pro to macOS Catalina, So I WON'T do any support stuff for macOS ever.**
 
+## MODEL DESIGN
+
+Please refer to [MODEL_DESIGN.md](MODEL_DESIGN.md).
+
 ## UPDATES
 
 Please refer to [UPDATES.md](UPDATES.md).

@@ -11,7 +11,7 @@ class THGame():
         pass
 
 
-class THGameRensen(THGame):
+class THGameKouma(THGame):
     PreDefinedPOI = (37, 477, 40, 418)
 
     def __init__(self, scale):
@@ -26,7 +26,6 @@ class THGameRensen(THGame):
         return poi_game
 
 
-'''
 class THGameRensen(THGame):
     PreDefinedPOI = (37, 477, 40, 418)
 
@@ -40,4 +39,3 @@ class THGameRensen(THGame):
             int(self.PreDefinedPOI[0] * self.scale):int(self.PreDefinedPOI[1] * self.scale),
             int(self.PreDefinedPOI[2] * self.scale):int((self.PreDefinedPOI[3] * self.scale))]
         return poi_game
-'''

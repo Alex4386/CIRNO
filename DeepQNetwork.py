@@ -51,7 +51,7 @@ class DeepQNetwork(nn.Module):
 
 class Agent(object):
     def __init__(self, discountRate, epsilon, learningRate, inputDimension, batchSize, actions,
-                 maxMemorySize=1000000, epsilonFinal=0.99, epsilonDecreaseRate=0.996):
+                 maxMemorySize=1000000, epsilonFinal=0.01, epsilonDecreaseRate=0.996):
 
         self.gamma = discountRate
 
@@ -118,8 +118,8 @@ class Agent(object):
 
             stateBatch = self.currentStateMemory[batch]
             actionBatch = self.actionMemory[batch]
-            actionValues = np.array(self.actionSpace, dtype=np.bool)
-            actionIndexes = np.dot(actionBatch, actionValues)
+            # actionValues = np.array(self.actionSpace, dtype=np.bool)
+            # actionIndexes = np.dot(actionBatch, actionValues)
             rewardBatch = self.rewardMemory[batch]
             terminalBatch = self.terminalMemory[batch]
             newStateBatch = self.newStateMemory[batch]
@@ -133,7 +133,7 @@ class Agent(object):
             nextQ = self.QEvaluation.forward(
                 newStateBatch).to(self.QEvaluation.device)
 
-            batchIndex = np.arange(self.batchSize, dtype=np.int32)
+            # batchIndex = np.arange(self.batchSize, dtype=np.int32)
 
             targetQ[actionBatch] = rewardBatch + \
                 self.gamma*T.max(nextQ, dim=1)[0]*terminalBatch
@@ -147,10 +147,15 @@ class Agent(object):
 
             self.QEvaluation.optimizer.step()
 
-    def dumpMe(self, file):
+    def save(self, fileLocation):
+        file = open(fileLocation, "wb")
         pickle.dump(self, file)
+        file.close()
 
     @staticmethod
-    def load(file):
+    def load(fileLocation):
+        file = open(fileLocation, "rb")
         tmp = pickle.load(file)
         tmp.device = T.device("cuda:0" if T.cuda.is_available() else "cpu:0")
+        file.close()
+        return tmp

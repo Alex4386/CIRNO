@@ -45,3 +45,8 @@ package-lock.json
 geckodriver.log
 
 dataset/
+
+# CIRNO Engine Specific
+models/*.model
+th_binary/
+

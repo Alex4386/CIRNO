@@ -1,21 +1,33 @@
 import gym
 from DeepQNetwork import Agent
-from utils import plotLearning
 import numpy as np
 from gym import wrappers
+import pickle
+
+# configuration zone
+SESSION_NAME = ""
+MODEL_SAVE_LOCATION = "models/"
 
 if __name__ == "__main__":
     # test implementation using OpenAI GYM.
 
-    env = gym.make("LunarLander-v2")
+    env = gym.make("SpaceInvaders-v0")
+
+    # Start Learning
+    # '''
     agent = Agent(
         discountRate=0.99,
-        epsilon=1.00,
+        epsilon=0.00,
+        epsilonFinal=0.00,
         batchSize=64,
         actions=4,
         inputDimension=[8],
         learningRate=0.003
     )
+    # '''
+
+    # Continue Learning or Transferred Learning
+    #agent = Agent.load(MODEL_SAVE_LOCATION+"latest.model")
 
     scores = []
     epsilonHistory = []
@@ -27,6 +39,7 @@ if __name__ == "__main__":
             averageScore = np.mean(scores[max(0, i-10):(i+1)])
             print("GamePlay: ", i, " / Score:", currentScore,
                   "Average Score: ", averageScore, "epsilon: ", agent.epsilon)
+            agent.save(MODEL_SAVE_LOCATION+"latest.model")
         else:
             print("GamePlay: ", i, " / Score:", currentScore)
 
@@ -48,10 +61,5 @@ if __name__ == "__main__":
             observation = newObservation
 
         scores.append(currentScore)
-
-    x = [1 for i in range(gamePlays)]
-    fileName = "lunar-lander.png"
-
-    plotLearning(x, scores, epsilonHistory, fileName)
 
 env.close()

@@ -24,8 +24,8 @@ Yes, You heard it right, Let's make Cirno be a intellectual being!
 - Micro$oft Window$® Platforms
 - Linux Systems whose Desktop Manager has GTK3 Support EXCLUDING [TmaxOS](https://tmaxos.com)
 
-Yes, bad news here. macOS didn't make it. But Tim Cook is deprecating x86 support so, Initial reason of continuing this project is this  
-**UPDATE: I updated my Macbook Pro to macOS Catalina, So I WON'T do any support stuff for macOS ever.**
+Yes, bad news here. macOS didn't make it. But Tim Cook is deprecating x86 support so, Initial reason of continuing this project is Artificial intelligence that can play Touhou Project. So, I will not support it for *NOW™*.  
+**P.S. I updated my Macbook Pro to macOS Catalina, So I WON'T do any support stuff for macOS ever, but I might be supporting  x64 when x64 touhou project is out.**  
 
 ## MODEL DESIGN
 

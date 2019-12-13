@@ -27,7 +27,7 @@ class DeepQNetwork(nn.Module):
         # Layer2 func1Dimensions -> func2Dimension
         self.layer2 = nn.Linear(self.func1Dimension, self.func2Dimension)
 
-        # Layer3 func1Dimensions -> func2Dimension
+        # Layer3 func2Dimensions -> actions
         self.layer3 = nn.Linear(self.func2Dimension, self.actions)
 
         self.optimizer = optim.Adam(self.parameters(), lr=learningRate)

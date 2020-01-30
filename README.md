@@ -1,10 +1,4 @@
-# CIRNO
-
-**C**IRNO:  
-**I**ntelligence for  
-**R**ecognizing,  
-**N**avigating and  
-**O**perating ingame.
+![CIRNO-banner](https://user-images.githubusercontent.com/27724108/73478401-59b1a500-43d9-11ea-972b-ac723f11f2cb.png)  
 
 Yes, You heard it right, Let's make Cirno be a intellectual being!
 

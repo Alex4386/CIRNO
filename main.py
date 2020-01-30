@@ -1,5 +1,5 @@
 import gym
-from DeepQNetwork import Agent
+from CIRNONetwork import Agent
 import numpy as np
 from gym import wrappers
 import pickle

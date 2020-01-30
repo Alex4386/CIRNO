@@ -1,4 +1,4 @@
-![CIRNO-banner](https://user-images.githubusercontent.com/27724108/73478627-c7f66780-43d9-11ea-829f-94c8afbaf4b3.png)  
+![CIRNO-banner](https://user-images.githubusercontent.com/27724108/73479506-7c44bd80-43db-11ea-8854-567592cd5bd8.png)  
 
 Yes, You heard it right, Let's make Cirno be a intellectual being!
 

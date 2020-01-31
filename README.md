@@ -14,18 +14,21 @@ Yes, You heard it right, Let's make Cirno be a intellectual being!
 ## Supported Platforms
 
 - Micro$oft Window$® Platforms
-- Linux Systems whose Desktop Manager has GTK3 Support EXCLUDING [TmaxOS](https://tmaxos.com)
+- Linux Systems whose Desktop Manager has GTK3 Support *EXCLUDING [TmaxOS](https://tmaxos.com)*  
+- Experimental support for macOS
+  - macOS systems versions less than equal with macOS Mojave with WineHQ installed (experimental, but rather stable)
+  - macOS Catalina or above with [crossover](https://www.codeweavers.com/products) installed (experimental)
 
-Yes, bad news here. macOS didn't make it. But Tim Cook is deprecating x86 support so, Initial reason of continuing this project is Artificial intelligence that can play Touhou Project. So, I will not support it for *NOW™*.  
-**P.S. I updated my Macbook Pro to macOS Catalina, So I WON'T do any support stuff for macOS ever, but I might be supporting  x64 when x64 touhou project is out.**  
+Reason why TmaxOS is not supported is due to their bizzare GTK implementation AND Touhou Project is unable to run with Windows Compatibility layer.  
+Since TmaxOS is *not allowing* people to reverse engineer their software for *compatibility reasons*. I am ***NOT*** going to support this platform.
 
 ## MODEL DESIGN
 
-Please refer to [MODEL_DESIGN.md](MODEL_DESIGN.md).
+Please refer to [Docs/dev-updates/MODEL_DESIGN.md](Docs/dev-updates/MODEL_DESIGN.md).
 
 ## UPDATES
 
-Please refer to [UPDATES.md](UPDATES.md).
+Please refer to [Docs/dev-updates/UPDATES.md](UPDATES.md).
 
 ## LICENSE
 

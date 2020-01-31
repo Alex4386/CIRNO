@@ -1,5 +1,6 @@
 import numpy as np
 
+# The Touhou Project POI Processors
 
 class THGame():
     scale = 1

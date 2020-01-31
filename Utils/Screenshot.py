@@ -88,7 +88,7 @@ class LinuxImageLoader(ImageLoader):
     def getScreenshot(self):
         # will fix it later. but, currently, it is just a disgusting code. with pylint errors.
 
-        # STACK OVERFLOW CODE - PREREQUISITIVES
+        # STACK OVERFLOW CODE START - PREREQUISITIVES
         def array_from_pixbuf(p):
             " convert from GdkPixbuf to numpy array"
             w, h, c, r = (p.get_width(), p.get_height(),
@@ -129,56 +129,6 @@ class LinuxImageLoader(ImageLoader):
 
         return self.img
 
-        # STACK OVERFLOW CODE
-
+        # STACK OVERFLOW CODE END
 #
 #
-#
-#
-#
-#
-#
-#
-
-
-# Testing Code
-if __name__ == "__main__":
-
-    scale = float(input("Enter GUI Scale:"))
-    imageLoader = WindowsImageLoader(
-        scale) if isWindows() else LinuxImageLoader(scale)
-
-    print("Please Launch Desired touhou project version")
-    input("Press Enter, then it will capture the Active Window Automatically after 5 seconds ")
-    print()
-
-    print("Waiting for capture")
-    time.sleep(5)
-    imageLoader.setWindow()
-    print()
-
-    print("Window handle:", imageLoader.window)
-    print()
-
-    print("Getting image...")
-    img = imageLoader.getScreenshot()
-
-    print("Matplotlib export trial:")
-    plt.imshow(img)
-    plt.show()
-
-    print("Test Complete")
-
-    from Game import THGameRensen
-
-    rensen = THGameRensen(scale)
-    currentFrame = 0
-
-    while True:
-        start_time = time.time()
-        imgPOI = imageLoader.imageProcess(
-            rensen.PointOfInterestProcess(
-                imageLoader.getScreenshot() / 255))
-
-        print("Update: ", 1.0 / (time.time() - start_time), "fps")
-        currentFrame += 1

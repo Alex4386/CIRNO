@@ -1,4 +1,5 @@
 from Utils.OSHandler import isWindows
+import psutil
 
 if isWindows():
     from ctypes import windll, c_uint, c_ulong, byref, sizeof
@@ -19,7 +20,7 @@ class THGameMemoryKouma():
         if self.pid < 0:
             raise OSError("Touhou Project was not detected in OS Level")
 
-        self.hProcess = self.OpenProcess(0x0010, false, self.pid)
+        self.hProcess = self.OpenProcess(0x0010, False, self.pid)
             
 
     def __del__(self):
@@ -49,7 +50,7 @@ class THGameMemoryRensen():
         if self.pid < 0:
             raise OSError("Touhou Project was not detected in OS Level")
 
-        self.hProcess = self.OpenProcess(0x0010, false, self.pid)
+        self.hProcess = self.OpenProcess(0x0010, False, self.pid)
             
 
     def __del__(self):

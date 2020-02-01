@@ -32,7 +32,7 @@ else:
 print("Please Launch Touhou Project and Press Enter, then quickly go back to window")
 input()
 
-for i in range(10,0,-1):
+for i in range(5,0,-1):
     print(i)
     time.sleep(1)
 
@@ -54,7 +54,8 @@ gameMemory = THGameMemoryRensen()
 isThisMsgNew = True
 fullMsg = b''
 
-while not gameMemory.isGameOver():
+while True:
+    print("Receiving Packets")
     msg = s.recv(headerLength)
     if isThisMsgNew:
         messageLength = int(msg[:headerLength])
@@ -62,7 +63,6 @@ while not gameMemory.isGameOver():
 
     cirnoData = None
     
-    while not isThisMsgNew:
         fullMsg += msg
 
         if len(fullMsg)-headerLength == messageLength:
@@ -123,6 +123,7 @@ while not gameMemory.isGameOver():
     }
     cirnoMsg = pickle.dumps(cirnoMsgObj)
     cirnoMsg = addHeader(cirnoMsg)
+    print("Sending Packet...")
 
     s.send(cirnoMsg)
 

@@ -63,56 +63,54 @@ while True:
 
     cirnoData = None
     
-        fullMsg += msg
+    fullMsg += msg
 
-        if len(fullMsg)-headerLength == messageLength:
-            print("Message Received.")
-            print(fullMsg[headerLength:])
+    if len(fullMsg)-headerLength == messageLength:
+        print("Message Received.")
+        print(fullMsg[headerLength:])
 
-            header = fullMsg[:headerLength]
-            payload = fullMsg[headerLength:]
+        header = fullMsg[:headerLength]
+        payload = fullMsg[headerLength:]
 
-            cirnoData = pickle.loads(payload)
-            
-            isThisMsgNew = True
-            fullMsg = b''
+        cirnoData = pickle.loads(payload)
+        
+        isThisMsgNew = True
+        fullMsg = b''
 
-            if cirnoData['input']['keyboard']['shift']:
-                pynput.keyboard.press(pynput.keyboard.Key.shift)
-            else:
-                pynput.keyboard.release(pynput.keyboard.Key.shift)
+        if cirnoData['input']['keyboard']['shift']:
+            pynput.keyboard.press(pynput.keyboard.Key.shift)
+        else:
+            pynput.keyboard.release(pynput.keyboard.Key.shift)
 
-            if cirnoData['input']['keyboard']['z']:
-                pynput.keyboard.press(pynput.keyboard.Key.z)
-            else:
-                pynput.keyboard.release(pynput.keyboard.Key.z)
+        if cirnoData['input']['keyboard']['z']:
+            pynput.keyboard.press(pynput.keyboard.Key.z)
+        else:
+            pynput.keyboard.release(pynput.keyboard.Key.z)
 
-            if cirnoData['input']['keyboard']['x']:
-                pynput.keyboard.press(pynput.keyboard.Key.x)
-            else:
-                pynput.keyboard.release(pynput.keyboard.Key.x)
+        if cirnoData['input']['keyboard']['x']:
+            pynput.keyboard.press(pynput.keyboard.Key.x)
+        else:
+            pynput.keyboard.release(pynput.keyboard.Key.x)
 
-            if cirnoData['input']['keyboard']['left']:
-                pynput.keyboard.press(pynput.keyboard.Key.left)
-            else:
-                pynput.keyboard.release(pynput.keyboard.Key.left)
+        if cirnoData['input']['keyboard']['left']:
+            pynput.keyboard.press(pynput.keyboard.Key.left)
+        else:
+            pynput.keyboard.release(pynput.keyboard.Key.left)
 
-            if cirnoData['input']['keyboard']['right']:
-                pynput.keyboard.press(pynput.keyboard.Key.right)
-            else:
-                pynput.keyboard.release(pynput.keyboard.Key.right)
+        if cirnoData['input']['keyboard']['right']:
+            pynput.keyboard.press(pynput.keyboard.Key.right)
+        else:
+            pynput.keyboard.release(pynput.keyboard.Key.right)
 
-            if cirnoData['input']['keyboard']['up']:
-                pynput.keyboard.press(pynput.keyboard.Key.up)
-            else:
-                pynput.keyboard.release(pynput.keyboard.Key.up)
+        if cirnoData['input']['keyboard']['up']:
+            pynput.keyboard.press(pynput.keyboard.Key.up)
+        else:
+            pynput.keyboard.release(pynput.keyboard.Key.up)
 
-            if cirnoData['input']['keyboard']['down']:
-                pynput.keyboard.press(pynput.keyboard.Key.down)
-            else:
-                pynput.keyboard.release(pynput.keyboard.Key.down)
-
-            break
+        if cirnoData['input']['keyboard']['down']:
+            pynput.keyboard.press(pynput.keyboard.Key.down)
+        else:
+            pynput.keyboard.release(pynput.keyboard.Key.down)
 
     gameScreen = gamePOI.PointOfInterestProcess(imageLoader.getScreenshot())
     cirnoMsgObj = {

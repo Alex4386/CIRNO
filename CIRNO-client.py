@@ -6,7 +6,7 @@ from CIRNO.TouhouPOIHandler import THGamePOIRensen
 from CIRNO.TouhouMemoryHandler import THGameMemoryRensen
 from Utils.Screenshot import WindowsImageLoader, LinuxImageLoader
 from Utils.OSHandler import isWindows, isLinux, isSupported
-from Utils.Socket import addHeader, headerLength
+from Utils.Socket import addHeader, headerLength, imageSize
 
 # This code will send current screenshot to 
 # server.
@@ -55,7 +55,7 @@ isThisMsgNew = True
 fullMsg = b''
 
 while True:
-    gameScreen = gamePOI.PointOfInterestProcess(imageLoader.getScreenshot())
+    gameScreen = gamePOI.PointOfInterestProcess(imageLoader.getScreenshot()).resize(imageSize)
     cirnoMsgObj = {
         "score": gameMemory.getScore(),
         "lives": gameMemory.getLives(),

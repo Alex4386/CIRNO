@@ -1,7 +1,8 @@
 import pickle
 import socket
-from Utils.Socket import headerLength
 import matplotlib.pyplot as plt
+from CIRNO.DeepQNetwork import DeepQNetwork
+from Utils.Socket import headerLength, imageSize
 from PIL import Image
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -10,6 +11,18 @@ s.listen(5)
 
 isThisMsgNew = True
 fullMsg = b''
+
+# This should be same with the client
+CIRNONet = DeepQNetwork(
+  screenWidth=imageSize[0],
+  screenHeight=imageSize[1],
+  batchSize=128,
+  gamma=0.999,
+  epsilonStart=0.9,
+  epsilonEnd=0.05,
+  epsilonDecay=200,
+  action=14
+)
 
 print("CIRNO Server Online!")
 conn, addr = s.accept()
@@ -34,7 +47,6 @@ while True:
 
   if len(fullMsg)-headerLength == messageLength:
     print("Message Received.")
-    print(fullMsg[headerLength:])
 
     header = fullMsg[:headerLength]
     payload = fullMsg[headerLength:]
@@ -48,6 +60,8 @@ while True:
     fullMsg = b''
 
     # DQN Processing Stuff
+    CIRNONet.selectAction(cirnoData['screen'])
+    CIRNONet.train()
 
     cirnoSendData = pickle.dumps({
       "input": {

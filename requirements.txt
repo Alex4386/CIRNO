@@ -11,8 +11,8 @@
 ################################################################################
 
 matplotlib
-opencv-python
 pillow
 pynput
 pyscreenshot
 pywin32; platform_system == "Windows"
+psutil

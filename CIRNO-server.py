@@ -46,6 +46,24 @@ while True:
 
     isThisMsgNew = True
     fullMsg = b''
+
+    # DQN Processing Stuff
+
+    cirnoSendData = pickle.dumps({
+      "input": {
+        "keyboard": {
+          "shift": False,
+          "z": False,
+          "x": False,
+          "up": False,
+          "left": False,
+          "right": False,
+          "down": False
+        }
+      }
+    })
+
+    conn.send(cirnoSendData)
     
 
 

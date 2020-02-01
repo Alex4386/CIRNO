@@ -1,5 +1,6 @@
 # The ScreenCapture Stuff
 import time
+import win32gui
 import numpy as np
 
 # Platform Specific Initialization

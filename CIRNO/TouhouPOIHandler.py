@@ -24,6 +24,7 @@ class THGamePOI():
 class THGamePOIKouma(THGamePOI):
     preDefinedPOIUpperLeft = (40, 37)
     preDefinedPOIBelowRight = (418, 477)
+    
     # 40, 37
     # 418, 477
 
@@ -35,10 +36,10 @@ class THGamePOIKouma(THGamePOI):
         # pylint: disable=unsubscriptable-object
         poi_game = img.crop(
             (
-                int(self.PreDefinedPOIUpperLeft[0] * self.scale),
-                int(self.PreDefinedPOIUpperLeft[1] * self.scale),
-                int(self.PreDefinedPOIBelowRight[0] * self.scale),
-                int(self.PreDefinedPOIBelowRight[1] * self.scale)
+                int(self.preDefinedPOIUpperLeft[0] * self.scale),
+                int(self.preDefinedPOIUpperLeft[1] * self.scale),
+                int(self.preDefinedPOIBelowRight[0] * self.scale),
+                int(self.preDefinedPOIBelowRight[1] * self.scale)
             )
         ).resize((self.getViewportWidth(), self.getViewportHeight()))
 
@@ -53,8 +54,6 @@ class THGamePOIKouma(THGamePOI):
 class THGamePOIRensen(THGamePOI):
     preDefinedPOIUpperLeft = (40, 37)
     preDefinedPOIBelowRight = (418, 477)
-    # 40, 37
-    # 418, 477
 
     def __init__(self, scale):
         super().__init__(scale)
@@ -64,10 +63,10 @@ class THGamePOIRensen(THGamePOI):
         # pylint: disable=unsubscriptable-object
         poi_game = img.crop(
             (
-                int(self.PreDefinedPOIUpperLeft[0] * self.scale),
-                int(self.PreDefinedPOIUpperLeft[1] * self.scale),
-                int(self.PreDefinedPOIBelowRight[0] * self.scale),
-                int(self.PreDefinedPOIBelowRight[1] * self.scale)
+                int(self.preDefinedPOIUpperLeft[0] * self.scale),
+                int(self.preDefinedPOIUpperLeft[1] * self.scale),
+                int(self.preDefinedPOIBelowRight[0] * self.scale),
+                int(self.preDefinedPOIBelowRight[1] * self.scale)
             )
         ).resize((self.getViewportWidth(), self.getViewportHeight()))
 

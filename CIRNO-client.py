@@ -55,6 +55,19 @@ isThisMsgNew = True
 fullMsg = b''
 
 while True:
+    gameScreen = gamePOI.PointOfInterestProcess(imageLoader.getScreenshot())
+    cirnoMsgObj = {
+        "score": gameMemory.getScore(),
+        "lives": gameMemory.getLives(),
+        "screen": gameScreen,
+        "bombs": gameMemory.getBombs()
+    }
+    cirnoMsg = pickle.dumps(cirnoMsgObj)
+    cirnoMsg = addHeader(cirnoMsg)
+    print("Sending Packet...")
+
+    s.send(cirnoMsg)
+    
     print("Receiving Packets")
     msg = s.recv(headerLength)
     if isThisMsgNew:
@@ -112,18 +125,7 @@ while True:
         else:
             pynput.keyboard.release(pynput.keyboard.Key.down)
 
-    gameScreen = gamePOI.PointOfInterestProcess(imageLoader.getScreenshot())
-    cirnoMsgObj = {
-        score: gameMemory.getScore(),
-        lives: gameMemory.getLives(),
-        screen: gameScreen,
-        bombs: gameMemory.getBombs()
-    }
-    cirnoMsg = pickle.dumps(cirnoMsgObj)
-    cirnoMsg = addHeader(cirnoMsg)
-    print("Sending Packet...")
-
-    s.send(cirnoMsg)
+    
 
 
 

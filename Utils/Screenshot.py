@@ -1,13 +1,9 @@
 # The ScreenCapture Stuff
-import matplotlib.pyplot as plt
 import time
 import numpy as np
 
-# Image Processing Stuff
-import cv2
-
 # Platform Specific Initialization
-from OSHandler import runByOS, isWindows, isLinux
+from Utils.OSHandler import runByOS, isWindows, isLinux
 
 if isWindows():
     from PIL import ImageGrab

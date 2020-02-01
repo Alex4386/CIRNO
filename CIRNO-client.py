@@ -22,7 +22,7 @@ if not isSupported():
 
 if isWindows():
     imageLoader = WindowsImageLoader(scale)
-else if isLinux():
+elif isLinux():
     imageLoader = LinuxImageLoader(scale)
 else:
     print("Failed to detect Operating System.")

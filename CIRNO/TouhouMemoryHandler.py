@@ -1,6 +1,7 @@
+from Utils.OSHandler import isWindows
+
 if isWindows():
-    from ctypes import windll
-    from ctypes.wintypes import c_uint, c_ulong, byref, sizeof
+    from ctypes import windll, c_uint, c_ulong, byref, sizeof
 else:
     raise OSError("This OS is not supported for Native Touhou Project Runs")
 

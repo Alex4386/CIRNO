@@ -27,7 +27,7 @@ Reason why TmaxOS is not supported is due to their bizzare WINAPI Implementation
 Since TmaxOS is *not allowing* people to reverse engineer their software for *compatibility reasons*. I am ***NOT*** going to support this platform.  
 
 ### Server
-Server will run the all Deep Q Learning and Convolutionary Neural Network Job.  
+Server will run the all Deep Q Learning and Convolutional Neural Network Job.  
 Personally, I developed server with consideration of running on Ubuntu 18.04 LTS, but following platforms are also supported.  
 
 - Micro$oft Window$®

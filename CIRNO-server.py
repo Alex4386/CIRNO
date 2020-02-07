@@ -52,9 +52,11 @@ while True:
     payload = fullMsg[headerLength:]
 
     cirnoData = pickle.loads(payload)
+""" 
     plt.imshow(cirnoData['screen'])
     plt.show()
-    print("score:", cirnoData['score'])
+    print("score:", cirnoData['score']) 
+"""
 
     isThisMsgNew = True
     fullMsg = b''

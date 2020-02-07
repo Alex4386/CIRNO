@@ -6,7 +6,7 @@ Yes, You heard it right, Let's make Cirno be a intellectual being!
 
 It's a recursive acronym of:  
 **C**IRNO: **I**ntelligence for ingame **R**ecognition, **N**avigation and **O**peration.  
-basically an artificial intelligence based on   
+basically an artificial intelligence based on Reinforcement Learning to play games for you.  
 
 [Deep Q Network](https://arxiv.org/abs/1312.5602) for playing Touhou Project but It can be extended to _ANY™_ games.  
 

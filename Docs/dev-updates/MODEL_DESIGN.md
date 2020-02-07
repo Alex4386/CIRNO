@@ -4,9 +4,10 @@ Deep Q Network Structure:
 
 Dense Layer:
 
-Input: Screen,  
-Layer1: 256 Dense Layer,  
-Layer2: 256 Dense Layer,  
-Output: Actions
+Convolution2D = 3 -> 12, KernelSize=5, Stride=2
+Convolution2D = 12 -> 32, KernelSize=5, Stride=2
+Convolution2D = 32 -> 32, KernelSize=5, Stride=2
+Dense = Flatten -> 512
+Dense = 512 -> actions
 
 To be updated™

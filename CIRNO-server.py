@@ -22,6 +22,10 @@ CIRNONet = DeepQNetwork(
   epsilonEnd=0.05,
   epsilonDecay=200,
   action=14
+  #       up, down, left, right
+  #     Z+up, down, left, right
+  # Shift+up, down, left, right
+  #        X, nothing
 )
 
 print("CIRNO Server Online!")
@@ -62,20 +66,49 @@ while True:
     fullMsg = b''
 
     # DQN Processing Stuff
-    CIRNONet.selectAction(cirnoData['screen'])
+    x = CIRNONet.selectAction(cirnoData['screen'])
     CIRNONet.train()
+    
+    confidence, index = x.max(0)
+    print("Operation Index:", index, "with confidence:", confidence)
+
+    # Input Handling
+
+    keyboardInput = {
+      "shift": False,
+      "z": False,
+      "x": False,
+      "up": False,
+      "left": False,
+      "right": False,
+      "down": False
+    }
+
+    if index / 4 < 3:
+      if index % 4 == 0:
+        keyboardInput['up'] = True
+      elif index % 4 == 1:
+        keyboardInput['left'] = True
+      elif index % 4 == 2:
+        keyboardInput['right'] = True
+      elif index % 4 == 3:
+        keyboardInput['down'] = True
+    
+    if index // 4 == 1:
+      keyboardInput['z'] = True
+    
+    if index // 4 == 2:
+      keyboardInput['shift'] = True
+
+    if index // 4 == 3:
+      if index == 12:
+        keyboardInput['x'] = True
+      
+    # Send Client a data
 
     cirnoSendData = pickle.dumps({
       "input": {
-        "keyboard": {
-          "shift": False,
-          "z": False,
-          "x": False,
-          "up": False,
-          "left": False,
-          "right": False,
-          "down": False
-        }
+        "keyboard": keyboardInput
       }
     })
 

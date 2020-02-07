@@ -1,3 +1,3 @@
 # Empty Init file
 #
-## CIRNO Core Module
+## CIRNO Util Module

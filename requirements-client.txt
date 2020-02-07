@@ -10,9 +10,8 @@
 # `Pipfile.lock` and then regenerate `requirements*.txt`.
 ################################################################################
 
-matplotlib
-pillow
 pynput
-pyscreenshot
-pywin32; platform_system == "Windows"
+numpy
 psutil
+pillow
+pywin32; platform_system == "Windows"

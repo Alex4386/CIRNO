@@ -29,6 +29,17 @@ CIRNONet = DeepQNetwork(
 )
 
 print("CIRNO Server Online!")
+
+# temp Variables
+currentState = None
+nextState = None
+
+prevScreen = None
+currentScreen = None
+
+prevScore = None
+currentScore = None
+
 conn, addr = s.accept()
 while True:
   try:
@@ -65,10 +76,30 @@ while True:
     isThisMsgNew = True
     fullMsg = b''
 
+    # Variable Initialization
+    if prevScreen == None:
+      prevScreen = cirnoData['screen']
+    
+    if prevScore == None:
+      prevScore = cirnoData['score']
+    
+    currentScreen = cirnoData['screen']
+    currentScore = cirnoData['score']
+    nextState = currentScreen - prevScreen
+    currentReward = currentScore - prevScore
+
     # DQN Processing Stuff
     x = CIRNONet.selectAction(cirnoData['screen'])
-    CIRNONet.train()
     
+    CIRNONet.memory.push(currentState, x, nextState, currentReward)
+    CIRNONet.train()
+
+    # Variable Updates
+    prevScreen = currentScreen
+    currentState = nextState
+    prevScore = currentScore
+
+    # Process DQN Outputs
     confidence, index = x.max(0)
     print("Operation Index:", index, "with confidence:", confidence)
 

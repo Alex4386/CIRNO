@@ -2,25 +2,38 @@
 
 Yes, You heard it right, Let's make Cirno be a intellectual being!
 
-## What is this?
+## What is THE CIRNO Project?
+
+It's a recursive acronym of:  
+**C**IRNO: **I**ntelligence for ingame **R**ecognition, **N**avigation and **O**peration.  
+basically an artificial intelligence based on   
 
 [Deep Q Network](https://arxiv.org/abs/1312.5602) for playing Touhou Project but It can be extended to _ANY™_ games.  
+
 (Currently Only Supporting Touhou Project 12: Unidentified Fantastic Object)
 
-~~I think it is better for ROBOT FAIRY™ uprising than just a SKYNET™ uprising.~~
-
-[™](http://law.go.kr/lsInfoP.do?lsiSeq=203191&efYd=20181018#0000)
+~~I think it is better for ROBOT FAIRY™ uprising than just a SKYNET™ uprising.~~  
 
 ## Supported Platforms
 
-- Micro$oft Window$® Platforms
-- Linux Systems whose Desktop Manager has GTK3 Support *EXCLUDING [TmaxOS](https://tmaxos.com)*  
-- Experimental support for macOS
-  - macOS systems versions less than equal with macOS Mojave with WineHQ installed (experimental, but rather stable)
-  - macOS Catalina or above with [crossover](https://www.codeweavers.com/products) installed (experimental)
+### Client
+Client will actually run the game and send information to Machine Learning Server,  
+If your computer has enough computing power, you can run client on same machine. though.  
 
-Reason why TmaxOS is not supported is due to their bizzare GTK implementation AND Touhou Project is unable to run with Windows Compatibility layer.  
-Since TmaxOS is *not allowing* people to reverse engineer their software for *compatibility reasons*. I am ***NOT*** going to support this platform.
+- Micro$oft Window$® Platforms
+- Linux Systems Running Python3 Script inside of Wine or Similar WINAPI Compatibility Solutions ***EXCLUDING [TmaxOS](https://tmaxos.com)***
+
+Reason why TmaxOS is not supported is due to their bizzare WINAPI Implementation AND Touhou Project is unable to run with Windows Compatibility layer.  
+Since TmaxOS is *not allowing* people to reverse engineer their software for *compatibility reasons*. I am ***NOT*** going to support this platform.  
+
+### Server
+Server will run the all Deep Q Learning and Convolutionary Neural Network Job.  
+Personally, I developed server with consideration of running on Ubuntu 18.04 LTS, but following platforms are also supported.  
+
+- Micro$oft Window$®
+- macOS
+- Linux
+
 
 ## MODEL DESIGN
 

@@ -28,7 +28,7 @@ Please refer to [Docs/dev-updates/MODEL_DESIGN.md](Docs/dev-updates/MODEL_DESIGN
 
 ## UPDATES
 
-Please refer to [Docs/dev-updates/UPDATES.md](UPDATES.md).
+Please refer to [Docs/dev-updates/UPDATES.md](Docs/dev-updates/UPDATES.md).
 
 ## LICENSE
 
